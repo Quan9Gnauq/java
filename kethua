@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class hang{
+    public String MaH, TenH, nsx;
+    public int G;
+    public String tgbh,da,cs;
+    public Scanner nhapdl=new Scanner(System.in);
+    public void nhapdl() {
+        System.out.println("nhap ma hang:");
+        MaH = nhapdl.nextLine();
+        System.out.println("nhap ten hang:");
+        TenH = nhapdl.nextLine();
+        System.out.println("nhap nsx:");
+        nsx = nhapdl.nextLine();
+        System.out.println("nhap gia:");
+        G = nhapdl.nextInt();
+    }
+    public void xuatdl() {
+        System.out.println("ma hang:"+this.MaH);
+        System.out.println("ten hang:"+this.TenH);
+        System.out.println("nsx:"+this.nsx);
+        System.out.println("Gia:"+this.G);
+    }
+}
+    class dienmay extends hang {
+        public void nhapdl() {
+            super.nhapdl();
+            String khongnhap=nhapdl.nextLine();
+            System.out.println("nhap tgbh:");
+            this.tgbh=nhapdl.nextLine();
+            System.out.println("nhap da:");
+            this.da=nhapdl.nextLine();
+            System.out.println("nhap cs:");
+            this.cs=nhapdl.nextLine();
+        }
+        public void xuatdl() {
+            System.out.println("tgbh:"+this.tgbh);
+            System.out.println("dien ap:"+this.da);
+            System.out.println("cong suat:"+this.cs);
+        }
+    }
+public class hanghoa {
+    public static void main(String[] args) {
+        dienmay h = new dienmay();
+        h.nhapdl();
+        h.xuatdl();
+    }
+}
