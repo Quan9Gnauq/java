@@ -1,0 +1,47 @@
+class person {
+    String code, name;
+    int age; 
+    person (String c, String n, int a) {
+        code=c; 
+        name=n; 
+        age=a;
+    }
+    void outdata() {
+        System.out.print(code+" "+name+""+age);
+    }
+    }
+class employee extends person {
+    long salary;
+    employee (String c, String n, int a, long sal) {
+        super(c,n,a);
+        salary=sal;
+    }
+    void outdata () {
+        System.out.print(code+" "+name+" "+age);
+        System.out.print(" "+salary);
+    }
+}
+class manager extends employee {
+    long allovance;
+    manager (String c, String n, int a, long sal, long al) {
+        super (c,n,a,sal);
+        allovance=al;
+    }
+    void outdata() {
+        System.out.print(code+" "+name+" "+age);
+        System.out.print(" "+salary+" "+allovance);    
+    }
+}
+class problem {
+    public static void main(String args[]) {
+        person p= new person("P01","Hoa",21);
+        employee emp= new employee("P02","Luan",25,150);
+        manager mng= new manager("P03","Quang",25,150,200);
+        p.outdata();
+        System.out.println("");
+        emp.outdata();
+        System.out.println("");
+        mng.outdata();
+        System.out.println("");
+    }
+}
