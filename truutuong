@@ -1,0 +1,34 @@
+abstract class Employee {
+    int BasicSalary= 100;
+    String name;
+    abstract void out();
+}
+class manager extends Employee{
+    manager(String n, int salary) {
+        name = n;
+        BasicSalary = salary;
+    }
+    void out() {
+        System.out.println(name + " " + BasicSalary*5);
+    }
+}
+class worker extends Employee {
+    worker(String n) {
+        name = n;
+    }
+    worker(String n, int salary) {
+        name =n;
+        BasicSalary = salary;
+    }
+    void out() {
+        System.out.println(name + " " + BasicSalary*3);
+    }
+}
+class AbstractClassDemo{
+    public static void main(String[] args) {
+        manager m = new manager("Trung", 200);
+        worker w = new worker("Hoang");
+        m.out();
+        w.out();
+    }
+}
