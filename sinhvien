@@ -1,0 +1,77 @@
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+
+class suaDuLieu {
+    String ID,name,age,address,gpa;
+    Scanner s = new Scanner(System.in);
+    int j=0;
+    String[][] array = new String[100][4];
+    ArrayList<String>list = new ArrayList<String>();
+    void themSV() {
+        System.out.println("nhap ID:");
+        ID=s.nextLine();
+        System.out.println("nhap ten:");
+        name=s.nextLine();
+        System.out.println("nhap tuoi");
+        age=s.nextLine();
+        System.out.println("nhap dia chi:");
+        address=s.nextLine();
+        System.out.println("nhap diem trung binh:");
+        gpa=s.nextLine();
+        list.add(ID);
+        list.add(name);
+        list.add(age);
+        list.add(address);
+        list.add(gpa);  
+        for (int k=0; k<100; k++) {
+            for (int l = 0; l < 4; l++) {
+            array[k][l] = "";    
+            }
+        }
+        for (int k = 0; k < 4; k++) {
+            for (int l = 0; l < 4; l++) {
+                array[j][l]=list.get(k);          
+            }
+        }            
+    }
+    void htds() {
+        System.out.println(list);
+    }
+}
+
+public class sinhVien {
+    public static void main(String[] args) {
+        boolean i = true;
+        while (i) {
+        System.out.println("***********MENU***********");
+        System.out.println("1. Them sv");
+        System.out.println("2. Cap nhat thong tin sv");
+        System.out.println("3. Xoa sv theo id");
+        System.out.println("4. Tim kiem sv theo ten");
+        System.out.println("5. sap xep sv theo gpa");
+        System.out.println("6. sap xep sv theo ten");
+        System.out.println("7. sap xep sv theo id");
+        System.out.println("8. hien thi ds sv");
+        System.out.println("0. thoat");
+        System.out.println("**************************");
+        suaDuLieu sdl = new suaDuLieu();
+        int j=0;
+        String[][] array = new String[100][4];
+        ArrayList<String>list = new ArrayList<String>();
+        Scanner s = new Scanner(System.in);
+        int a = s.nextInt();
+            switch(a) {      
+            case 1: 
+            sdl.themSV();
+            j=j+1;
+            break;
+            case 8:
+            sdl.htds();
+            break;
+        }
+    }
+}
+}
