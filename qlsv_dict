@@ -1,0 +1,80 @@
+print("Chuong trinh quan ly sv:")
+def addS():
+    """Ham them sv"""
+    global listS
+    info = {
+        'id' : ' ',
+        'name' : ' '
+    }
+    print("nhap id:")
+    id = input()
+    while True:
+        student = findS(id)
+        if student != False:
+            print("id nay da ton tai, nhap lai id:")
+            id=input()
+        else:
+            break
+    info['id'] = id
+    print("nhap ten:")
+    info['name'] = input()
+    listS.append(info)
+def findS(id):
+    """Ham tim sv"""
+    global listS
+    for i in range(0, len(listS)):
+        if listS[i]['id']==id:
+            return [i, listS[i]]
+    return False
+def delS():
+    """Ham xoa sv"""
+    print("Xoa sv")
+    print(" nhap id sv can xoa:")
+    id = input()
+    global listS
+    student = findS(id)
+    if student != False:
+        listS.remove(student[1])
+        print("Xoa sv thanh cong")
+    else:
+        print(" khong tim thay sv")
+def showS():
+    """Ham hien thi dssv"""
+    print("danh sach sinh vien")
+    for i in range(0, len(listS)):
+        print("[",listS[i]['id'],"]","[",listS[i]['name'],"]")
+def editS():
+    """Ham sua info sv"""
+    print("sua thong tin sv")
+    global listS
+    print("nhap id sv can sua:")
+    id = input()
+    student = findS(id)
+    if student == False:
+        print("khong tim thay sv", id)
+    else:
+        print("nhap ten sinh vien")
+        name=input()
+        student[1]['name'] = name
+listS = [
+    {"id":1,"name":"lune"}
+]
+action = 0
+while action >=0:
+    if action==1:
+        addS()
+    elif action==2:
+        delS()
+    elif action==3:
+        editS()
+    elif action==4:
+        showS()
+    
+    print("1.Them sv")
+    print("2.Xoa sv")
+    print("3.Sua sv")
+    print("4.Show dssv")
+    print("Chon chuc nang:")
+    action = int(input())
+    if action==0:
+        break
